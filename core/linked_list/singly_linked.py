@@ -1,14 +1,8 @@
 from typing import Any, Optional
 
+from .error import EmptyListError
+
 ValueType = Any
-
-
-class LinkedListError(Exception):
-    pass
-
-
-class EmptyListError(Exception):
-    pass
 
 
 class SinglyLinkedList:

@@ -1,6 +1,7 @@
 import pytest
 
-from core.linked_list.singly_linked import SinglyLinkedList, EmptyListError
+from core.linked_list.error import EmptyListError
+from core.linked_list.singly_linked import SinglyLinkedList
 
 
 def test_init():
