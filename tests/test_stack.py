@@ -1,29 +1,28 @@
 import pytest
 
-from core.stack import Stack, EmptyStackError
+from core.stack import Stack, ArrayStack, DequeStack, EmptyStackError
 
 
-@pytest.fixture
-def stack():
-    return Stack()
-
-
-def test_init():
-    stack = Stack()
+@pytest.mark.parametrize("cls", [Stack, ArrayStack, DequeStack])
+def test_init(cls):
+    stack = cls()
 
     assert len(stack) == 0
 
 
+@pytest.mark.parametrize("stack", [Stack(), ArrayStack(), DequeStack()])
 def test_pop_empty(stack):
     with pytest.raises(EmptyStackError):
         stack.pop()
 
 
+@pytest.mark.parametrize("stack", [Stack(), ArrayStack(), DequeStack()])
 def test_peek_empty(stack):
     with pytest.raises(EmptyStackError):
         stack.peek()
 
 
+@pytest.mark.parametrize("stack", [Stack(), ArrayStack(), DequeStack()])
 def test_stack(stack):
     stack.push(1)
     stack.push(2)
@@ -43,6 +42,7 @@ def test_stack(stack):
     assert len(stack) == 0
 
 
+@pytest.mark.parametrize("stack", [Stack(), ArrayStack(), DequeStack()])
 def test_len(stack):
     assert len(stack) == 0
 

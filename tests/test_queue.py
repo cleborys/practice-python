@@ -1,29 +1,28 @@
 import pytest
 
-from core.queue import Queue, EmptyQueueError
+from core.queue import Queue, DequeQueue, EmptyQueueError
 
 
-@pytest.fixture
-def queue():
-    return Queue()
-
-
-def test_init():
+@pytest.mark.parametrize("cls", [Queue, DequeQueue])
+def test_init(cls):
     queue = Queue()
 
     assert len(queue) == 0
 
 
+@pytest.mark.parametrize("queue", [Queue(), DequeQueue()])
 def test_dequeue_empty(queue):
     with pytest.raises(EmptyQueueError):
         queue.dequeue()
 
 
+@pytest.mark.parametrize("queue", [Queue(), DequeQueue()])
 def test_peek_empty(queue):
     with pytest.raises(EmptyQueueError):
         queue.peek()
 
 
+@pytest.mark.parametrize("queue", [Queue(), DequeQueue()])
 def test_queue(queue):
     queue.enqueue(1)
     queue.enqueue(2)
@@ -40,6 +39,7 @@ def test_queue(queue):
     assert len(queue) == 0
 
 
+@pytest.mark.parametrize("queue", [Queue(), DequeQueue()])
 def test_queue_len(queue):
     queue.enqueue(1)
     assert len(queue) == 1
