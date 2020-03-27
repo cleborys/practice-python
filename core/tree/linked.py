@@ -75,6 +75,7 @@ class LinkedBinaryTree:
             node._right = new_node
         else:
             node._left = new_node
+
         return new_node
 
     def delete_child(self, parent: Node, right: bool):
