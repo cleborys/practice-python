@@ -82,6 +82,14 @@ def test_get_head_tail(llist):
     assert llist.get_tail() is tail
 
 
+def test_get_head_tail_empty(llist):
+    with pytest.raises(EmptyListError):
+        llist.get_head()
+
+    with pytest.raises(EmptyListError):
+        llist.get_tail()
+
+
 def test_splice_out_head(llist):
     llist.insert_back(1)
     llist.insert_back(2)
