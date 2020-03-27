@@ -17,9 +17,15 @@ class ArrayHeap:
     def __str__(self) -> str:  # pragma: no cover
         return str(self._tree)
 
-    def push(self, value: ValueType):
+    def push(self, value: ValueType) -> Item:
         new_item = self._tree.add_last(value)
         self._bubble(new_item)
+        return new_item
+
+    def update(self, item: Item, value: ValueType):
+        self._tree._verify_item(item)
+        item._reassign(value)
+        self._bubble(item)
 
     def pop(self) -> ValueType:
         if len(self) == 0:

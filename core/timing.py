@@ -1,7 +1,7 @@
 import time
 
 
-class Timer:
+class Timer:  # pragma: no cover
     def __init__(self):
         self._elapsed = 0
 
