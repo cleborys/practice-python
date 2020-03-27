@@ -2,12 +2,10 @@ from typing import Any, Optional
 
 ValueType = Any
 
-
-class ArrayTreeError(Exception):
-    pass
+from .error import TreeError, ContainerMismatchError
 
 
-class ContainerMismatchError(ArrayTreeError):
+class ArrayTreeError(TreeError):
     pass
 
 
