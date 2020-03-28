@@ -1,8 +1,8 @@
+from .error import TreeError, ContainerMismatchError
+
 from typing import Any, Optional
 
 ValueType = Any
-
-from .error import TreeError, ContainerMismatchError
 
 
 class ArrayTreeError(TreeError):

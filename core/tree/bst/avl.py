@@ -1,5 +1,5 @@
 from .base import BinarySearchTree
-from typing import Any, Tuple, List
+from typing import Any, List
 
 ValueType = Any
 KeyType = int

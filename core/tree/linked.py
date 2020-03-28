@@ -1,8 +1,8 @@
+from .error import ContainerMismatchError, InvalidNodeError, CannotDeleteError
+
 from typing import Any, Optional
 
 ValueType = Any
-
-from .error import ContainerMismatchError, InvalidNodeError, CannotDeleteError
 
 
 class LinkedBinaryTree:

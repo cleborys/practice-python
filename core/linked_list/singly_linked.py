@@ -1,6 +1,6 @@
-from typing import Any, Optional
-
 from .error import EmptyListError
+
+from typing import Any
 
 ValueType = Any
 

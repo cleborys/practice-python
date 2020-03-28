@@ -1,8 +1,8 @@
+from .error import EmptyListError, ContainerMismatch
+
 from typing import Any, Optional
 
 ValueType = Any
-
-from .error import EmptyListError, ContainerMismatch
 
 
 class DoublyLinkedList:
