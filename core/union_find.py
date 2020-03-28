@@ -22,7 +22,7 @@ class UnionFind:
             self._next = None
             self._size = 1
 
-        def __lt__(self, other: "Item") -> bool:
+        def __lt__(self, other: "UnionFind.Item") -> bool:
             return self._size < other._size
 
     def __init__(self):

@@ -36,7 +36,7 @@ class Graph:
     class Edge:
         __slots__ = ["_source", "_target", "_weight"]
 
-        def __init__(self, source: "Node", target: "Node", weight: WeightType):
+        def __init__(self, source: "Graph.Node", target: "Graph.Node", weight: WeightType):
             self._source = source
             self._target = target
             self._weight = weight

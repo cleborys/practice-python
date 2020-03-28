@@ -28,9 +28,9 @@ class BoundaryEdge:
 
 class Dijkstra:
     @staticmethod
-    def compute_path_tree(graph: Graph, start: Node) -> Dict[Node, Optional[Edge]]:
+    def compute_path_tree(graph: Graph, start: Node) -> Dict[Node, Optional[Node]]:
         heap = ArrayHeap()
-        paths = {start: None}
+        paths: Dict[Node, Optional[Node]] = {start: None}
         distances = {start: 0}
 
         boundary = {}
@@ -72,7 +72,7 @@ class Dijkstra:
         if node not in paths:
             raise KeyError
 
-        reverse_path = []
+        reverse_path: List[Edge] = []
         current_node = node
         while paths[current_node] is not None:
             reverse_path.append(paths[current_node])

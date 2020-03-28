@@ -188,15 +188,18 @@ class ArrayTree:
 
     def swap_with_parent(self, item: Item):
         other = self.get_parent(item)
-        self.swap_items(item, other)
+        if other is not None:
+            self.swap_items(item, other)
 
     def swap_with_right(self, item: Item):
         other = self.get_right(item)
-        self.swap_items(item, other)
+        if other is not None:
+            self.swap_items(item, other)
 
     def swap_with_left(self, item: Item):
         other = self.get_left(item)
-        self.swap_items(item, other)
+        if other is not None:
+            self.swap_items(item, other)
 
     def swap_items(self, item: Item, other: Item):
         self._verify_item(item)

@@ -7,12 +7,12 @@ from .error import ContainerMismatchError, InvalidNodeError, CannotDeleteError
 
 class LinkedBinaryTree:
     class Node:
-        def __init__(self, container: "LinkedTree", value: ValueType):
+        def __init__(self, container: "LinkedBinaryTree", value: ValueType):
             self._value = value
             self._container = container
             self._valid = True
-            self._right = None
-            self._left = None
+            self._right: Optional["LinkedBinaryTree.Node"] = None
+            self._left: Optional["LinkedBinaryTree.Node"] = None
 
         @property
         def value(self) -> ValueType:
@@ -59,7 +59,7 @@ class LinkedBinaryTree:
     def add_left(self, node: Node, value: ValueType) -> Node:
         return self.add_child(node, False, value)
 
-    def add_child(self, node: Node, right: True, value: ValueType) -> Node:
+    def add_child(self, node: Node, right: bool, value: ValueType) -> Node:
         self._verify_node(node)
 
         if right is True and node._right is not None:

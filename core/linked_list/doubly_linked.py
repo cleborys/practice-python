@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Optional
 
 ValueType = Any
 
@@ -9,8 +9,8 @@ class DoublyLinkedList:
     class Node:
         def __init__(self, container: "DoublyLinkedList", value: ValueType):
             self._value = value
-            self._next = None
-            self._previous = None
+            self._next: Optional["DoublyLinkedList.Node"] = None
+            self._previous: Optional["DoublyLinkedList.Node"] = None
             self._container = container
 
         @property
